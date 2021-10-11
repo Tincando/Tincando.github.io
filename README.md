@@ -2,4 +2,4 @@
 
 Ovdje će se nalaziti HTML/CSS, možda i javascript moje buduće stranice.
 
-Adresa web stranice je https//:tinkanjovsky.github.io
+Adresa web stranice je https://tinkanjovsky.github.io
