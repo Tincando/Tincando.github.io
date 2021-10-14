@@ -17,8 +17,10 @@
             top: 36px;
             right: 70px;
             position: fixed;
-            width: 141px;
+            width: 0px;
             z-index: 2;
+            opacity: 0;
+
         }
 
         .container {
@@ -77,7 +79,6 @@
             position: absolute;
             top: 520px;
             left: 60px;
-
             color: white;
             z-index: 5;
             opacity: 0%;
@@ -86,15 +87,26 @@
         .kontakt {
             position: absolute;
             top: 600px;
-            left: 60px;
+            left: -20px;
             height: 5%;
             width: 20%;
             z-index: 5;
             background-color: rgb(0, 0, 0);
             color: white;
-            border: none;
+            border: solid rgb(28, 255, 28);
+            border-width: thin;
             border-radius: 25px;
-            font-size: 20px;
+            box-shadow: black;
+            text-decoration: none;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 23px;
+            opacity: 0;
+        }
+
+
+        a:hover {
+            background-color: green;
         }
     </style>
 </head>
@@ -120,18 +132,9 @@
     </div>
 
     <h1 id="lette2">
-        <span>D</span>
-        <span>o</span>
-        <span>b</span>
-        <span>r</span>
-        <span>o</span>
-        <span>d</span>
-        <span>o</span>
-        <span>s</span>
-        <span>l</span>
-        <span>i</span>
+        DOBRODOŠLI
     </h1>
-    <button type="button" class="kontakt">Više o meni</button>
+    <a href="#" class="kontakt" id="kontakt">Više o meni</a>
 </body>
 
 <script>
@@ -160,8 +163,22 @@
 
     $(document).ready(function () {
 
-        $('#lette2').animate(
+        $('#lette2').delay(850).animate(
             { opacity: "100%" }
+        );
+
+        $("#kontakt").delay(1500).animate(
+            {
+                opacity: "100%",
+                left: "60px"
+            }
+        );
+
+        $("#logo").animate(
+            {
+                opacity: "100%",
+                width: "141"
+            }, "slow"
         );
     });
 </script>
