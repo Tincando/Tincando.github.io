@@ -22,7 +22,6 @@
             right: 10px;
             position: fixed;
             width: 0px;
-            z-index: 2;
             opacity: 0;
 
         }
@@ -31,11 +30,12 @@
             position: relative;
             top:-100px;
             opacity: 0%;
+        
         }
 
         #sent2{
             position: relative;
-            
+            z-index: 1;
             right:-100px;
             opacity: 0%;
         }
@@ -52,6 +52,7 @@
             font-size: 2vw;
             opacity: 0;
             transition: background-color 1s;
+            
         }
 
 
@@ -60,10 +61,15 @@
             grid-column: span 3;
             background-color: black;
             color: white;
-            padding: 80px;
+            padding:80px;
+            
             display: grid;
             grid-template-rows: repeat(2,1fr);
             grid-template-columns: repeat(3,1fr);
+        }
+
+        .item-2 :hover{
+            cursor: pointer;
         }
 
         .container{
@@ -92,6 +98,7 @@
             color: rgb(255, 255, 255);
             grid-column:  2;
             grid-row: span 2;
+            z-index: 1;
         }
 
         .uvod h1{
@@ -104,37 +111,111 @@
         }
         .navbar{
             position: fixed;
-            width: 100%;
-            opacity: 20%;
-            top: -80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+     li{
+         list-style: none;
         }
 
-        ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: rgb(0, 0, 0);
-}
-     li{
-         float: left;
-         position: relative;
-         top:15px;
-     }
+    a{
+    text-decoration: none;
+    }
 
-     li a{
+    .hamburger{
+        display: none;
+    }
+
+    .bar{
         display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        padding-bottom: 50px;
-        text-decoration: none;
-     }
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: #ffffff;
+    }
+
+    .nav-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .nav-item{
+        margin-left:2rem;
+    }
+
+    .nav-menu a{ 
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: rgb(255, 255, 255);
+    }
 
      .item-3{
          background-color: grey;
          grid-column: span 3;
          grid-row: span 3;
+     }
+
+     
+
+     .item-2 :hover img {
+         width: 60%;
+     }
+
+    .uvod a:hover {
+         background-color: rgb(32, 117, 32);
+     }
+
+     .nav-menu a:hover{
+       opacity: 70%;
+        font-size: 1.4rem;
+        
+     }
+
+     @media only screen and (max-width:768px){
+         .nav-menu{
+             position:fixed;
+             left:-150%;
+             top:5rem;
+             flex-direction: column;
+             background-color: rgb(0, 0, 0);
+             width: 100%;
+             border-radius: 10px;
+             text-align: center;
+             transition: 0.3s;
+             box-shadow: 0 10px 27px rgb(82, 82, 82);
+         }
+
+         .nav-menu.active{
+             left:0;
+         }
+
+         .nav-item{
+             margin: 2.5rem 0;
+         }
+
+         .hamburger{
+             display: block;
+             cursor: pointer;
+         }
+
+         .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
      }
 
     </style>
@@ -146,12 +227,17 @@
             <img src="logo.png" id="logo">
         </a>
         <nav class="navbar" id="navbar">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a class="active" href="#about">About</a></li>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#news">News</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+            <li class="nav-item" ><a href="#about">About</a></li>
           </ul>
+          <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
         </nav>
     </header>
     <div class="container">
@@ -164,27 +250,27 @@
             <h2 id="sent2">
                 Welcome to my website
             </h2>
-            <a href="#" class="kontakt" id="kontakt">Kontakt</a>
+            <a href="#" class="kontakt" id="kontakt">Contact</a>
     </div>
 </div>
     <div class="item-2">
         <div class="subitem1">
-            <img src="js.png" height="50%" width="50%">
+            <img src="js.png"  width="50%">
         </div>
         <div class="subitem2">
-            <img src="python.png" height="50%" width="50%">
+            <img src="python.png"  width="50%">
         </div>
         <div class="subitem3">
-            <img src="sql.png" height="50%" width="50%">
+            <img src="sql.png"  width="50%">
         </div>
         <div class="subitem4" >
-            <h2 style="text-align: center;">HTML</h2>
+            <img src="html.png"  width="50%">
         </div>
         <div class="subitem5">
-            <h2 style="text-align: center;">CSS</h2>
+            <img src="css.png"  width="50%">
         </div>
         <div class="subitem6">
-            <h2 style="text-align: center;">VUE.js</h2>
+            <img src="vue.png"  width="50%">
         </div>
     </div>
     <div class="item-3">
@@ -199,8 +285,6 @@
 
         $("#navbar").animate(
             {
-                opacity:"70%",
-                top: "0"
                 
             }, "slow"
         );
@@ -234,6 +318,16 @@
             }, "slow"
         );
     });
+
+    const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
 </script>
 
 </script>
