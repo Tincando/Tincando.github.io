@@ -63,7 +63,6 @@
             background-color: black;
             color: white;
             padding:80px;
-            
             display: grid;
             grid-template-rows: repeat(2,1fr);
             grid-template-columns: repeat(3,1fr);
@@ -163,6 +162,10 @@
          background-color: grey;
          grid-column: span 3;
          grid-row: span 3;
+         padding-top: 150px;
+         padding: 80px;
+         display: flex;
+        justify-content: center;
      }
 
      
@@ -180,6 +183,7 @@
         font-size: 1.4rem;
         
      }
+
 
      @media only screen and (max-width:768px){
          .nav-menu{
@@ -232,7 +236,7 @@
         </a>
         <nav class="navbar" id="navbar">
         <ul class="nav-menu">
-            <li class="nav-item"><a href="#uvod">Home</a></li>
+            <li class="nav-item"><a href="#home">Home</a></li>
             <li class="nav-item"><a href="#portfolio">Skills</a></li>
             <li class="nav-item"><a href="#contact">Contact</a></li>
             <li class="nav-item" ><a href="#about">About</a></li>
@@ -245,16 +249,15 @@
         </nav>
     </header>
     <div class="container">
-    <div class="item-1">
-        
-    <div class="uvod" id="uvod">
+    <div class="item-1" id="home">
+    <div class="uvod">
             <h1 id="sent1">
                 Hey, I'm Tin!
             </h1>
             <h2 id="sent2">
                 Welcome to my website
             </h2>
-            <a href="#" class="kontakt" id="kontakt">Contact</a>
+            <a href="#contact" class="kontakt" id="kontakt">Contact</a>
     </div>
 </div>
     <div class="item-2" id="portfolio">
@@ -333,7 +336,7 @@
     });
 
     const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+    const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", mobileMenu);
 
