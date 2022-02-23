@@ -1,137 +1,129 @@
 <!DOCTYPE html>
 <!-- refrence site https://tonydorio.com/# -->
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="jquery-3.6.0.min.js"></script>
-    
+
     <title>Tin Kanjovsky</title>
 
-
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0%;
-        }
+      img {
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
 
-        #logo {
-            top: -20px;
-            right: 10px;
-            position: fixed;
-            width: 0px;
-            opacity: 0;
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0%;
+      }
 
-        }
-        
-        #sent1{
-            position: relative;
-            top:-100px;
-            opacity: 0%;
-            z-index: 0;
-        
-        }
+      #logo {
+        top: -20px;
+        right: 10px;
+        position: fixed;
+        width: 0px;
+        opacity: 0;
+      }
 
-        #sent2{
-            position: relative;
-            right:-100px;
-            opacity: 0%;
-            z-index: 0;
-        }
+      #sent1 {
+        position: relative;
+        top: -100px;
+        opacity: 0%;
+        z-index: 0;
+      }
 
-        .kontakt {
-            background-color: transparent;
-            color: white;
-            border: solid rgb(28, 255, 28);
-            border-width: thin;
-            border-radius: 25px;
-            text-decoration: none;
-            text-align: center;
-            padding: 2vw 10vw;
-            font-size: 2vw;
-            opacity: 0;
-            transition: background-color 1s;
-            
-        }
+      #sent2 {
+        position: relative;
+        right: -100px;
+        opacity: 0%;
+        z-index: 0;
+      }
 
+      .kontakt {
+        background-color: transparent;
+        color: white;
+        border: solid rgb(28, 255, 28);
+        border-width: thin;
+        border-radius: 25px;
+        text-decoration: none;
+        text-align: center;
+        padding: 2vw 10vw;
+        font-size: 2vw;
+        opacity: 0;
+        transition: background-color 1s;
+      }
 
-        .item-2 {
-            grid-row: 2;
-            grid-column: span 3;
-            background-color: black;
-            color: white;
-            padding:80px;
-            display: grid;
-            grid-template-rows: repeat(2,1fr);
-            grid-template-columns: repeat(3,1fr);
-        }
+      .item-2 {
+        grid-row: 2;
+        grid-column: span 3;
+        background-color: rgb(211, 204, 204);
+        color: white;
+        padding: 80px;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-        .item-2 :hover{
-            cursor: pointer;
-        }
+      .item-2 :hover {
+        cursor: pointer;
+      }
 
-        .container{
-            height: 100%;
-            display: grid;
-            height: 100%;
-            grid-template-rows: repeat(3,1fr);
-            grid-template-columns: repeat(3,1fr);
-           
-        }
+      .container {
+        height: 100%;
+        height: 100%;
+      }
 
-        .item-1{
-            background-image: url("2back.jpg");
-            background-repeat: no-repeat;
-            padding: 260px 0 150px 0;
-            grid-row: 1;
-            grid-column: span 3;
-            display: grid;
-            grid-template-rows: repeat(3,1fr);
-            grid-template-columns: repeat(3,1fr);
-            
-            
-        }
+      .item-1 {
+        background-image: url("2back.jpg");
+        background-repeat: no-repeat;
+        padding: 260px 0 150px 0;
+        grid-row: 1;
+        grid-column: span 3;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-        .uvod{
-            color: rgb(255, 255, 255);
-            grid-column:  2;
-            grid-row: span 2;
-            
-        }
+      .uvod {
+        color: rgb(255, 255, 255);
+        grid-column: 2;
+        grid-row: span 2;
+      }
 
-        .uvod h1{
-            
-            font-size: 8vmin;
-        }
+      .uvod h1 {
+        font-size: 8vmin;
+      }
 
-        .uvod h2{
-            font-size: 5vmin;
-            color: rgb(211, 211, 211);
-        }
-        .navbar{
-            position: fixed;
-            top: -80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            z-index: 1;
-        }
-     li{
-         list-style: none;
-        }
+      .uvod h2 {
+        font-size: 5vmin;
+        color: rgb(211, 211, 211);
+      }
+      .navbar {
+        position: fixed;
+        top: -80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        z-index: 1;
+      }
+      li {
+        list-style: none;
+      }
 
-    a{
-    text-decoration: none;
-    }
+      a {
+        text-decoration: none;
+      }
 
-    .hamburger{
+      .hamburger {
         display: none;
-    }
+      }
 
-    .bar{
+      .bar {
         display: block;
         width: 25px;
         height: 3px;
@@ -139,213 +131,248 @@
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         background-color: #ffffff;
-    }
+      }
 
-    .nav-menu{
+      .nav-menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
-    }
+      }
 
-    .nav-item{
-        margin-left:2rem;
-    }
+      .nav-item {
+        margin-left: 2rem;
+      }
 
-    .nav-menu a{ 
+      .nav-menu a {
         font-size: 1.6rem;
         font-weight: 400;
         color: rgb(255, 255, 255);
-    }
+      }
 
-     .item-3{
-         background-color: grey;
-         grid-column: span 3;
-         grid-row: span 3;
-         padding-top: 150px;
-         padding: 80px;
-         display: flex;
+      .item-3 {
+        background-color: rgb(214, 38, 82);
+        grid-column: span 3;
+        grid-row: span 3;
+        padding-top: 150px;
+        padding: 80px;
+        display: flex;
         justify-content: center;
-     }
+      }
 
-     
+      .item-2 :hover img {
+        width: 60%;
+      }
 
-     .item-2 :hover img {
-         width: 60%;
-     }
+      .uvod a:hover {
+        background-color: rgb(32, 117, 32);
+      }
 
-    .uvod a:hover {
-         background-color: rgb(32, 117, 32);
-     }
-
-     .nav-menu a:hover{
-       opacity: 70%;
+      .nav-menu a:hover {
+        opacity: 70%;
         font-size: 1.4rem;
-        
-     }
+      }
 
+      @media only screen and (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          left: -150%;
+          top: 5rem;
+          flex-direction: column;
+          background-color: rgb(0, 0, 0);
+          width: 100%;
+          border-radius: 10px;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: 0 10px 27px rgb(82, 82, 82);
+        }
 
-     @media only screen and (max-width:768px){
-         .nav-menu{
-             position:fixed;
-             left:-150%;
-             top:5rem;
-             flex-direction: column;
-             background-color: rgb(0, 0, 0);
-             width: 100%;
-             border-radius: 10px;
-             text-align: center;
-             transition: 0.3s;
-             box-shadow: 0 10px 27px rgb(82, 82, 82);
-         }
+        .nav-menu.active {
+          left: 0;
+        }
 
-         .nav-menu.active{
-             left:0;
-         }
+        .nav-item {
+          margin: 2.5rem 0;
+        }
 
-         .nav-item{
-             margin: 2.5rem 0;
-         }
+        .hamburger {
+          display: block;
+          cursor: pointer;
+        }
 
-         .hamburger{
-             display: block;
-             cursor: pointer;
-         }
+        .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+        }
 
-         .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
+        .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
 
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
+        .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
 
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
+      .diagonal {
+        height: 90px;
+        font-size: 30px;
+        width: 100%;
+        background-image: linear-gradient(45deg, #6303b1, #ff0099);
+        transform: skewY(-5deg);
+        margin-top: -60px;
+        position: absolute;
+      }
 
-     }
+      .contact-form {
+        padding: 50px;
+        background-color: rgb(78, 78, 78);
+        width: 600px;
+        height: 550px;
+        border-radius: 5%;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
 
+      .form-control {
+      }
+
+      input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgb(121, 121, 121);
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding-top: 30px;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: rgb(214, 38, 82);
+        font-size: 20px;
+      }
+
+      button:hover {
+        color: rgb(161, 6, 45);
+      }
+
+      input:hover {
+        border-bottom: 1px solid white;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <a href="https://tincando.github.io">
-            <img src="logo.png" id="logo">
-        </a>
-        <nav class="navbar" id="navbar">
+      <a href="https://tincando.github.io">
+        <img src="logo.png" id="logo" />
+      </a>
+      <nav class="navbar" id="navbar">
         <ul class="nav-menu">
-            <li class="nav-item"><a href="#home">Home</a></li>
-            <li class="nav-item"><a href="#portfolio">Skills</a></li>
-            <li class="nav-item"><a href="#contact">Contact</a></li>
-            <li class="nav-item" ><a href="#about">About</a></li>
-          </ul>
-          <div class="hamburger">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-          </div>
-        </nav>
+          <li class="nav-item"><a href="#home">Home</a></li>
+          <li class="nav-item"><a href="#portfolio">Skills</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+          <li class="nav-item"><a href="#about">About</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
     </header>
     <div class="container">
-    <div class="item-1" id="home">
-    <div class="uvod">
-            <h1 id="sent1">
-                Hey, I'm Tin!
-            </h1>
-            <h2 id="sent2">
-                Welcome to my website
-            </h2>
-            <a href="#contact" class="kontakt" id="kontakt">Contact</a>
-    </div>
-</div>
-    <div class="item-2" id="portfolio">
-        <div class="subitem1">
-            <img src="js.png"  width="50%">
+      <div class="item-1" id="home">
+        <div class="uvod">
+          <h1 id="sent1">Hey, I'm Tin!</h1>
+          <h2 id="sent2">Welcome to my website</h2>
+          <a href="#contact" class="kontakt" id="kontakt">Contact</a>
         </div>
-        <div class="subitem2">
-            <img src="python.png"  width="50%">
+      </div>
+      <div class="diagonal">
+        <h2 style="color: rgb(255, 255, 255)">SKILLS</h2>
+      </div>
+      <div class="item-2" id="portfolio">
+        <div class="subitem1" style="text-align: center">
+          <img src="js.png" width="50%" ">
         </div>
-        <div class="subitem3">
-            <img src="sql.png"  width="50%">
+        <div class="subitem2" style="text-align: center">
+          <img src="python.png" width="50%" />
         </div>
-        <div class="subitem4" >
-            <img src="html.png"  width="50%">
+        <div class="subitem3" style="text-align: center">
+          <img src="sql.png" width="50%" />
         </div>
-        <div class="subitem5">
-            <img src="css.png"  width="50%">
+        <div class="subitem4" style="text-align: center">
+          <img src="html.png" width="50%" />
         </div>
-        <div class="subitem6">
-            <img src="vue.png"  width="50%">
+        <div class="subitem6" style="text-align: center">
+          <img src="vue.png" width="50%" />
         </div>
-    </div>
-    <div class="item-3" id="contact">
-        <form> 
-            <div class="contact-form">
-            <h1>Contact</h1>
-            <label for="email">Email</label>
-            <input type="email" class="email" placeholder="email">
-            <label for="password">Password</label>
-            <input type="password" class="password" placeholder="password">
-            <button type="submit">Send</button>
-        </div>
+      </div>
+      <div class="item-3" id="contact">
+        <form>
+          <div class="contact-form">
+            <h1 style="color: rgb(214, 38, 82)">CONTACT ME</h1>
+            <div class="form-control">
+              <input type="text" class="name" placeholder="NAME" />
+              <input type="email" class="email" placeholder="E-MAIL" />
+              <input type="password" class="password" placeholder="PASSWORD" />
+              <input type="number" class="number" placeholder="CONTACT NO" />
+              <input
+                type="text"
+                class="message"
+                placeholder="MESSAGE"
+                style="margin-top: 40px"
+              />
+              <button type="submit">SEND</button>
+            </div>
+          </div>
         </form>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 
-<script>
-
+  <script>
     $(document).ready(function () {
+      $("#navbar").animate(
+        {
+          top: "0px",
+        },
+        "slow"
+      );
 
-        $("#navbar").animate(
-            {
-                top:"0px",
-            }, "slow"
-        );
+      $("#sent1").delay(800).animate({
+        opacity: "100%",
+        top: "0",
+      });
 
-        $("#sent1").delay(800).animate(
-            {
-                opacity:"100%",
-                top:"0"
-            }
-        )
+      $("#sent2").delay(1400).animate({
+        opacity: "100%",
+        right: "0",
+      });
 
+      $("#kontakt").delay(1500).animate({
+        opacity: "100%",
+        top: "630px",
+      });
 
-        $('#sent2').delay(1400).animate(
-            {
-                opacity: "100%",
-                right: "0"
-            }
-        );
-
-        $("#kontakt").delay(1500).animate(
-            {
-                opacity: "100%",
-                top: "630px"
-            }
-        );
-
-        $("#logo").animate(
-            {
-                opacity: "100%",
-                width: "141"
-            }, "slow"
-        );
+      $("#logo").animate(
+        {
+          opacity: "100%",
+          width: "141",
+        },
+        "slow"
+      );
     });
 
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
-hamburger.addEventListener("click", mobileMenu);
+    hamburger.addEventListener("click", mobileMenu);
 
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-}
-</script>
-
-</script>
-
+    function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+  </script>
 </html>
