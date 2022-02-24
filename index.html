@@ -294,33 +294,55 @@
       </div>
       <div class="item-2" id="portfolio">
         <div class="subitem1" style="text-align: center">
+          <h3>Javascript</h3>
           <img src="js.png" width="50%" ">
         </div>
         <div class="subitem2" style="text-align: center">
+          <h3>Python</h3>
           <img src="python.png" width="50%" />
         </div>
         <div class="subitem3" style="text-align: center">
+          <h3>MySQL</h3>
           <img src="sql.png" width="50%" />
         </div>
         <div class="subitem4" style="text-align: center">
+          <h3>HTML & CSS</h3>
           <img src="html.png" width="50%" />
         </div>
         <div class="subitem6" style="text-align: center">
+          <h3>VUE.js</h3>
           <img src="vue.png" width="50%" />
         </div>
       </div>
       <div class="item-3" id="contact">
-        <form>
+        <form
+          id="fcf-form-id"
+          class="fcf-form-class"
+          method="post"
+          action="fcf.php"
+        >
           <div class="contact-form">
             <h1 style="color: rgb(214, 38, 82)">CONTACT ME</h1>
             <div class="form-control">
-              <input type="text" class="name" placeholder="NAME" />
-              <input type="email" class="email" placeholder="E-MAIL" />
-              <input type="password" class="password" placeholder="PASSWORD" />
+              <input
+                type="text"
+                class="name"
+                id="Name"
+                name="Name"
+                placeholder="NAME"
+              />
+              <input
+                type="email"
+                class="email"
+                name="Email"
+                id="Email"
+                placeholder="E-MAIL"
+              />
               <input type="number" class="number" placeholder="CONTACT NO" />
               <input
                 type="text"
-                class="message"
+                name="Message"
+                class="Message"
                 placeholder="MESSAGE"
                 style="margin-top: 40px"
               />
@@ -331,7 +353,7 @@
       </div>
     </div>
   </body>
-
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
     $(document).ready(function () {
       $("#navbar").animate(
